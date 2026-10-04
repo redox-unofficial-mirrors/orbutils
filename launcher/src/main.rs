@@ -307,8 +307,8 @@ impl Bar {
             start_packages.push({
                 let mut package = Package::new();
                 package.name = category.to_string();
-                let icon = format!("{}/icons/mimetypes/inode-directory.png", UI_PATH);
-                package.icon.source = IconSource::Path(icon.clone().into());
+                let icon = "/usr/share/icons/mimetypes/inode-directory.png";
+                package.icon.source = IconSource::Path(icon.into());
                 package.icon_small.source = IconSource::Path(icon.into());
                 package.exec = format!("category={}", category);
                 package
@@ -317,8 +317,8 @@ impl Bar {
             packages.push({
                 let mut package = Package::new();
                 package.name = "Go back".to_string();
-                let icon = format!("{}/icons/mimetypes/inode-directory.png", UI_PATH);
-                package.icon.source = IconSource::Path(icon.clone().into());
+                let icon = "/usr/share/icons/mimetypes/inode-directory.png";
+                package.icon.source = IconSource::Path(icon.into());
                 package.icon_small.source = IconSource::Path(icon.into());
                 package.exec = "exit".to_string();
                 package
@@ -328,8 +328,8 @@ impl Bar {
         start_packages.push({
             let mut package = Package::new();
             package.name = "Logout".to_string();
-            let icon = format!("{}/icons/actions/system-log-out.png", UI_PATH);
-            package.icon.source = IconSource::Path(icon.clone().into());
+            let icon = "/usr/share/icons/actions/system-log-out.png";
+            package.icon.source = IconSource::Path(icon.into());
             package.icon_small.source = IconSource::Path(icon.into());
             package.exec = "exit".to_string();
             package
@@ -338,7 +338,7 @@ impl Bar {
         Bar {
             children: Vec::new(),
             packages: root_packages,
-            start: load_icon(&format!("{}/icons/places/start-here.png", UI_PATH)),
+            start: load_icon("/usr/share/icons/places/start-here.png"),
             start_packages,
             category_packages,
             font: Font::find(Some("Sans"), None, None).unwrap(),
